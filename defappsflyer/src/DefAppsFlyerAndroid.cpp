@@ -55,7 +55,7 @@ static jclass GetClass(JNIEnv* env, const char* classname)
   return outcls;
 }
 
-const char* DefAppsFlyer_setAppsFlyerKey(const char*appsFlyerKey)
+void DefAppsFlyer_setAppsFlyerKey(const char*appsFlyerKey)
 {
   AttachScope attachscope;
   JNIEnv* env = attachscope.m_Env;
@@ -64,13 +64,11 @@ const char* DefAppsFlyer_setAppsFlyerKey(const char*appsFlyerKey)
   attachscope.tempClass = cls;
 
   jstring afkey = env->NewStringUTF(appsFlyerKey);
-  //jmethodID method = env->GetStaticMethodID(cls, "DefAppsFlyer_setAppsFlyerKey", "(Landroid/app/Activity;Ljava/lang/String;)V");
-  //env->CallStaticVoidMethod(cls, method, dmGraphics::GetNativeAndroidActivity(), afkey);
-  jmethodID method = env->GetStaticMethodID(cls, "DefAppsFlyer_setAppsFlyerKey", "()Ljava/lang/String;");
-  jstring return_value = (jstring)env->CallStaticObjectMethod(cls, method, dmGraphics::GetNativeAndroidActivity(), afkey);
+  jmethodID method = env->GetStaticMethodID(cls, "DefAppsFlyer_setAppsFlyerKey", "(Landroid/app/Activity;Ljava/lang/String;)V");
+  env->CallStaticVoidMethod(cls, method, dmGraphics::GetNativeAndroidActivity(), afkey);
   const char *result_string = env->GetStringUTFChars(return_value, 0);
 
-  //env->DeleteLocalRef(cls);
+  env->DeleteLocalRef(cls);
   env->DeleteLocalRef(afkey);
 
   return result_string;
