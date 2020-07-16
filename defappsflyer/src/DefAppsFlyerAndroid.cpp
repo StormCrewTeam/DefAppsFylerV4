@@ -130,11 +130,6 @@ const char* DefAppsFlyer_getConversionResult(){
   jmethodID method = env->GetStaticMethodID(attachscope.tempClass, "getConversionResult", "()Ljava/lang/String;");
   jstring return_value = (jstring)env->CallStaticObjectMethod(attachscope.tempClass, method);
   
-=======
-  jclass cls = GetClass(env, JAR_PATH);
-  jmethodID method = env->GetStaticMethodID(cls, "getA", "()Ljava/lang/String;");
-  jstring return_value = (jstring)env->CallStaticObjectMethod(cls, method);
->>>>>>> parent of 5d2cd36... version 1.6
   const char *result_string = env->GetStringUTFChars(return_value, 0);
   //lua_pushstring(L, env->GetStringUTFChars(return_value, 0));
   env->DeleteLocalRef(return_value);
