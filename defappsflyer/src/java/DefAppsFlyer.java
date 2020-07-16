@@ -12,7 +12,7 @@ public class DefAppsFlyer {
     static String conversionResult = "Pepe";
 
     public static void DefAppsFlyer_setAppsFlyerKey(final Activity appActivity, final String appsFlyerKey) {
-        
+        conversionResult = "PEPONETE";
         AppsFlyerConversionListener conversionDataListener =
                 new AppsFlyerConversionListener() {
 
