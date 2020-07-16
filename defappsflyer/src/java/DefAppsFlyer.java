@@ -9,9 +9,11 @@ import java.util.Map;
 
 public class DefAppsFlyer {
 
+    static String conversionResult = "Pepe";
+
     public static String DefAppsFlyer_setAppsFlyerKey(final Activity appActivity, final String appsFlyerKey) {
         
-        String conversionResult = "Pepe";
+       
 
         AppsFlyerConversionListener conversionDataListener =
                 new AppsFlyerConversionListener() {
