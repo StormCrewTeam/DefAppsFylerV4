@@ -62,14 +62,6 @@ static int trackEvent(lua_State* L)
   return 0;
 }
 
-static const luaL_reg Module_methods[] =
-{
-  {"setIsDebug", setIsDebug},
-  {"trackEvent", trackEvent},
-  {"getConversionResult", getConversionResult}
-  {0, 0}
-};
-
 static int getConversionResult(lua_State* L)
 {
   DM_LUA_STACK_CHECK(L, 1);
@@ -77,6 +69,14 @@ static int getConversionResult(lua_State* L)
   lua_pushstring(L, str);
   return 1;
 }
+
+static const luaL_reg Module_methods[] =
+{
+  {"setIsDebug", setIsDebug},
+  {"trackEvent", trackEvent},
+  {"getConversionResult", getConversionResult}
+  {0, 0}
+};
 
 static void LuaInit(lua_State* L)
 {
