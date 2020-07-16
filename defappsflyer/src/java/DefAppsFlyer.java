@@ -50,6 +50,6 @@ public class DefAppsFlyer {
     }
 
     public static String getConversionResult(){
-        return conversionResult;
+        return "conversionResult";
     }
 }
