@@ -1,0 +1,41 @@
+function init(self)
+  pprint(appsflyer)
+  appsflyer.setIsDebug(true)
+  appsflyer.trackEvent("test_event", {test = "test",one = "one", two = "two"})
+  appsflyer.trackEvent("test_event", {})
+  appsflyer.trackEvent("test_event", {test = "test",one = "one", two = "two"})
+  appsflyer.trackEvent("test_event", {})
+  appsflyer.trackEvent("test_event", {test = 1,one = "one"})
+  appsflyer.trackEvent("test_event", {})
+  appsflyer.trackEvent("test_event", {test = 2})
+  appsflyer.trackEvent("test_event", {})
+  appsflyer.trackEvent("test_event", {test = "test",one = "one", two = 444})
+  appsflyer.trackEvent("test_event", {})
+  appsflyer.trackEvent("test_event", {test = "test",one = "one", two = "two"})
+  appsflyer.trackEvent("test_event", {})
+end
+
+function final(self)
+  -- Add finalization code here
+  -- Remove this function if not needed
+end
+
+function update(self, dt)
+  -- Add update code here
+  -- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+  -- Add message-handling code here
+  -- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+  -- Add input-handling code here
+  -- Remove this function if not needed
+end
+
+function on_reload(self)
+  -- Add reload-handling code here
+  -- Remove this function if not needed
+end
