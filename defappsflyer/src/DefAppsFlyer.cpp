@@ -12,6 +12,8 @@
 
 dmArray<TrackData> list;
 
+const char* lolito = "Mini lolo";
+
 static int setIsDebug(lua_State* L)
 {
   DM_LUA_STACK_CHECK(L, 0);
@@ -90,7 +92,7 @@ const char* appsFlyerKey;
 
 static dmExtension::Result AppInitilizeDefAppsFlyerDefAppsFlyer(dmExtension::AppParams* params)
 {
-  lolito = "Mega Lolo"
+  lolito = "Mega Lolo";
   int isDebug = dmConfigFile::GetInt(params->m_ConfigFile, "apps_flyer.is_debug", 0);
   if (isDebug && isDebug > 0)
   {
