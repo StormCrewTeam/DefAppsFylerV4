@@ -74,7 +74,7 @@ static const luaL_reg Module_methods[] =
 {
   {"setIsDebug", setIsDebug},
   {"trackEvent", trackEvent},
-  {"getConversionResult", getConversionResult}
+  {"getConversionResult", getConversionResult},
   {0, 0}
 };
 
