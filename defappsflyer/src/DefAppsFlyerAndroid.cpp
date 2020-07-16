@@ -123,10 +123,10 @@ const char* DefAppsFlyer_getConversionResult(){
 
 
 
-  jmethodID method = env->GetStaticMethodID(cls, "getConversionResult", "()Ljava/lang/String;");
-  
+  //jmethodID method = env->GetStaticMethodID(cls, "getConversionResult", "()Ljava/lang/String;");
   //jstring return_value = (jstring)env->CallStaticObjectMethod(cls, method);
 
+  jmethodID method = env->GetStaticMethodID(attachscope.tempClass, "getConversionResult", "()Ljava/lang/String;");
   jstring return_value = (jstring)env->CallStaticObjectMethod(attachscope.tempClass, method);
   
   const char *result_string = env->GetStringUTFChars(return_value, 0);
