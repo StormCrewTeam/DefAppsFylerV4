@@ -12,3 +12,4 @@ extern void DefAppsFlyer_setAppID(const char*appleAppID);
 extern void DefAppsFlyer_setIsDebug(bool is_debug);
 extern void DefAppsFlyer_trackAppLaunch();
 extern void DefAppsFlyer_trackEvent(const char*eventName, dmArray<TrackData>* trackData);
+extern char* DefAppsFlyer_getConversionResult();
