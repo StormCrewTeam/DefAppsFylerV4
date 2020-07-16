@@ -12,8 +12,6 @@
 
 dmArray<TrackData> list;
 
-const char* lolito = "lolo";
-
 static int setIsDebug(lua_State* L)
 {
   DM_LUA_STACK_CHECK(L, 0);
@@ -67,9 +65,8 @@ static int trackEvent(lua_State* L)
 static int getConversionResult(lua_State* L)
 {
   DM_LUA_STACK_CHECK(L, 1);
-  // const char* str = DefAppsFlyer_getConversionResult();
-  // lua_pushstring(L, str);
-  lua_pushstring(L, lolito);
+  const char* str = DefAppsFlyer_getConversionResult();
+  lua_pushstring(L, str);
   return 1;
 }
 

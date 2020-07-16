@@ -70,7 +70,7 @@ const char* DefAppsFlyer_setAppsFlyerKey(const char*appsFlyerKey)
   jstring return_value = (jstring)env->CallStaticObjectMethod(cls, method, dmGraphics::GetNativeAndroidActivity(), afkey);
   const char *result_string = env->GetStringUTFChars(return_value, 0);
 
-  env->DeleteLocalRef(cls);
+  //env->DeleteLocalRef(cls);
   env->DeleteLocalRef(afkey);
 
   return result_string;
