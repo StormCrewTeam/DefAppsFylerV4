@@ -67,7 +67,7 @@ void DefAppsFlyer_setAppsFlyerKey(const char*appsFlyerKey)
   jmethodID method = env->GetStaticMethodID(cls, "DefAppsFlyer_setAppsFlyerKey", "(Landroid/app/Activity;Ljava/lang/String;)V");
   env->CallStaticVoidMethod(cls, method, dmGraphics::GetNativeAndroidActivity(), afkey);
 
-  //env->DeleteLocalRef(cls);
+  env->DeleteLocalRef(cls);
   env->DeleteLocalRef(afkey);
 }
 

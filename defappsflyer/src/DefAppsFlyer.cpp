@@ -12,6 +12,8 @@
 
 dmArray<TrackData> list;
 
+const char* lolito = "lolo";
+
 static int setIsDebug(lua_State* L)
 {
   DM_LUA_STACK_CHECK(L, 0);
@@ -65,8 +67,9 @@ static int trackEvent(lua_State* L)
 static int getConversionResult(lua_State* L)
 {
   DM_LUA_STACK_CHECK(L, 1);
-  const char* str = DefAppsFlyer_getConversionResult();
-  lua_pushstring(L, str);
+  // const char* str = DefAppsFlyer_getConversionResult();
+  // lua_pushstring(L, str);
+  lua_pushstring(L, lolito);
   return 1;
 }
 
@@ -90,6 +93,7 @@ const char* appsFlyerKey;
 
 static dmExtension::Result AppInitilizeDefAppsFlyerDefAppsFlyer(dmExtension::AppParams* params)
 {
+  lolito = "Superlolo";
   int isDebug = dmConfigFile::GetInt(params->m_ConfigFile, "apps_flyer.is_debug", 0);
   if (isDebug && isDebug > 0)
   {
