@@ -47,7 +47,7 @@ public class DefAppsFlyer {
         AppsFlyerLib.getInstance().trackEvent(appActivity, eventName, eventValue);
     }
 
-    public static void getConversionResult(){
+    public static String getConversionResult(){
         return conversionResult;
     }
 }
