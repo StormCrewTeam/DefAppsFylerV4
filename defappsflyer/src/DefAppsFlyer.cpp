@@ -93,7 +93,6 @@ const char* appsFlyerKey;
 
 static dmExtension::Result AppInitilizeDefAppsFlyerDefAppsFlyer(dmExtension::AppParams* params)
 {
-  lolito = "Superlolo";
   int isDebug = dmConfigFile::GetInt(params->m_ConfigFile, "apps_flyer.is_debug", 0);
   if (isDebug && isDebug > 0)
   {
@@ -102,7 +101,7 @@ static dmExtension::Result AppInitilizeDefAppsFlyerDefAppsFlyer(dmExtension::App
   appsFlyerKey = dmConfigFile::GetString(params->m_ConfigFile, "apps_flyer.key", 0);
   if (appsFlyerKey)
   {
-    DefAppsFlyer_setAppsFlyerKey(appsFlyerKey);
+    lolito = DefAppsFlyer_setAppsFlyerKey(appsFlyerKey);
   }
   else
   {
@@ -137,7 +136,7 @@ static void OnEventDefAppsFlyer(dmExtension::Params* params, const dmExtension::
 #if defined(DM_PLATFORM_IOS)
     DefAppsFlyer_trackAppLaunch();
 #elif defined(DM_PLATFORM_ANDROID)
-    DefAppsFlyer_setAppsFlyerKey(appsFlyerKey);
+    lolito = DefAppsFlyer_setAppsFlyerKey(appsFlyerKey);
 #endif
   }
 

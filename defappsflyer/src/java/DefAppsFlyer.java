@@ -9,10 +9,10 @@ import java.util.Map;
 
 public class DefAppsFlyer {
 
-    static String conversionResult = "Pepe";
-
-    public static void DefAppsFlyer_setAppsFlyerKey(final Activity appActivity, final String appsFlyerKey) {
+    public static String DefAppsFlyer_setAppsFlyerKey(final Activity appActivity, final String appsFlyerKey) {
         
+        String conversionResult = "Pepe";
+
         AppsFlyerConversionListener conversionDataListener =
                 new AppsFlyerConversionListener() {
 
@@ -37,6 +37,8 @@ public class DefAppsFlyer {
         AppsFlyerLib.getInstance().init(appsFlyerKey, conversionDataListener, appActivity.getApplicationContext());
         AppsFlyerLib.getInstance().trackAppLaunch(appActivity.getApplicationContext(), appsFlyerKey);
         AppsFlyerLib.getInstance().startTracking(appActivity.getApplication());
+
+        return conversionResult;
     }
 
     public static void DefAppsFlyer_setIsDebug(boolean debugMode) {

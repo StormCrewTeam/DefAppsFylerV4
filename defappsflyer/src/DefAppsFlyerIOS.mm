@@ -4,10 +4,11 @@
 
 #include <AppsFlyerLib/AppsFlyerTracker.h>
 
-void DefAppsFlyer_setAppsFlyerKey(const char*appsFlyerKey)
+const char* DefAppsFlyer_setAppsFlyerKey(const char*appsFlyerKey)
 {
   [AppsFlyerTracker sharedTracker].appsFlyerDevKey = [NSString stringWithUTF8String:appsFlyerKey];
   //[AppsFlyerTracker sharedTracker].delegate = self;
+  return "iOS";
 }
 
 void DefAppsFlyer_setAppID(const char*appleAppID)
