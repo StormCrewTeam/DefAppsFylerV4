@@ -115,7 +115,7 @@ const char* DefAppsFlyer_getConversionResult(){
   AttachScope attachscope;
   JNIEnv* env = attachscope.m_Env;
   jclass cls = GetClass(env, JAR_PATH);
-  jmethodID method = env->GetStaticMethodID(cls, "getA", "()Ljava/lang/String;");
+  jmethodID method = env->GetStaticMethodID(cls, "getConversionResult", "()Ljava/lang/String;");
   jstring return_value = (jstring)env->CallStaticObjectMethod(cls, method);
   const char *result_string = env->GetStringUTFChars(return_value, 0);
   //lua_pushstring(L, env->GetStringUTFChars(return_value, 0));
