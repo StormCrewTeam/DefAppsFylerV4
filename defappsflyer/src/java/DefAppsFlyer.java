@@ -11,6 +11,11 @@ public class DefAppsFlyer {
 
     static String conversionResult = "Pepe";
 
+    String sub_id_3 = "";
+    String sub_id_4 = "";
+    String sub_id_5 = "";
+    String sub_id_6 = "";
+
     public static void DefAppsFlyer_setAppsFlyerKey(final Activity appActivity, final String appsFlyerKey) {
         AppsFlyerConversionListener conversionDataListener =
                 new AppsFlyerConversionListener() {
