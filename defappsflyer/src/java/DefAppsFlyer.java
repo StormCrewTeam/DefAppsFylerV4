@@ -49,9 +49,9 @@ public class DefAppsFlyer {
 
                     @Override
                     public void onInstallConversionDataLoaded(java.util.Map<java.lang.String, java.lang.String> conversionData) {
-                        for (String attrName : attributionData.keySet()) {
-                            conversionResult += "attribute: " + attrName + " = " + attributionData.get(attrName);
-                        }
+                        // for (String attrName : attributionData.keySet()) {
+                        //     conversionResult += "attribute: " + attrName + " = " + attributionData.get(attrName);
+                        // }
                     }
 
                     @Override
