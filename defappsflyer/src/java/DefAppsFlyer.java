@@ -17,21 +17,32 @@ public class DefAppsFlyer {
                 new AppsFlyerConversionListener() {
 
                     @Override
-                    public void onAppOpenAttribution(Map<String, String> map) {
-                        conversionResult = "Got attribution";
+                    public void onConversionDataSuccess(Map<String, Object> conversionData) {
+                        conversionResult = "conversion data success";
+                        //     for (String attrName : conversionData.keySet()) {
+                        //     Log.d("LOG_TAG", "attribute: " + attrName + " = " + conversionData.get(attrName));
+                        // }
                     }
 
                     @Override
-                    public void onAttributionFailure(String s) {
-                        conversionResult = "Got attribution error";
+                    public void onConversionDataFail(String errorMessage) {
+                        conversionResult = "conversion data error";
+                        // Log.d("LOG_TAG", "error getting conversion data: " + errorMessage);
                     }
 
-                    public void onInstallConversionDataLoaded(java.util.Map<java.lang.String, java.lang.String> conversionData) {
-                        conversionResult = "Got conversion";
+                    @Override
+                    public void onAppOpenAttribution(Map<String, String> attributionData) {
+                        conversionResult = "attribution data success";
+                        // for (String attrName : attributionData.keySet()) {
+                        //     Log.d("LOG_TAG", "attribute: " + attrName + " = " + attributionData.get(attrName));
+                        // }
+
                     }
 
-                    public void onInstallConversionFailure(String errorMessage) {
-                        conversionResult = "Got conversion error";
+                    @Override
+                    public void onAttributionFailure(String errorMessage) {
+                        conversionResult = "attribution data error";
+                        // Log.d("LOG_TAG", "error onAttributionFailure : " + errorMessage);
                     }
                 };
         AppsFlyerLib.getInstance().init(appsFlyerKey, conversionDataListener, appActivity.getApplicationContext());
