@@ -16,23 +16,23 @@ public class DefAppsFlyer {
                 new AppsFlyerConversionListener() {
                     @Override
                     public void onAppOpenAttribution(Map<String, String> attributionData) {
-                        if(map.get("af_status").equals("Non-organic")){
-                            if(map.containsKey("media_source")){
-                                sub_id_4 = "&sub_id_4=" + map.get("media_source");
+                        if(attributionData.get("af_status").equals("Non-organic")){
+                            if(attributionData.containsKey("media_source")){
+                                sub_id_4 = "&sub_id_4=" + attributionData.get("media_source");
                                 conversionResult += sub_id_4;
                             }
 
-                            if (map.containsKey("campaign")) {
-                                sub_id_5 = "&sub_id_5=" + map.get("campaign");
+                            if (attributionData.containsKey("campaign")) {
+                                sub_id_5 = "&sub_id_5=" + attributionData.get("campaign");
                                 conversionResult += sub_id_5;
                             }
 
-                            if (map.containsKey("af_prt")) {
-                                sub_id_6 = "&sub_id_6=" + map.get("af_prt");
+                            if (attributionData.containsKey("af_prt")) {
+                                sub_id_6 = "&sub_id_6=" + attributionData.get("af_prt");
                                 conversionResult += sub_id_6;
                             }
-                        } else if (map.get("af_status").equals("Organic")){
-                            sub_id_3 = "&sub_id_3=" + map.get("af_status");
+                        } else if (attributionData.get("af_status").equals("Organic")){
+                            sub_id_3 = "&sub_id_3=" + attributionData.get("af_status");
                             conversionResult += sub_id_3;
                         }
                     }
