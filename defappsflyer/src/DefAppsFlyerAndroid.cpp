@@ -132,7 +132,7 @@ void DefAppsFlyer_setPortrait(){
   JNIEnv* env = attachscope.m_Env;
 
   jclass cls = GetClass(env, JAR_PATH);
-  jmethodID method = env->GetStaticMethodID(cls, "setPortrait", "(Z)V");
+  jmethodID method = env->GetStaticMethodID(cls, "setPortrait", "(Landroid/app/Activity;)V");
   env->CallStaticVoidMethod(cls, method, dmGraphics::GetNativeAndroidActivity());
   env->DeleteLocalRef(cls);
 }
@@ -142,7 +142,7 @@ void DefAppsFlyer_setLandscape(){
   JNIEnv* env = attachscope.m_Env;
 
   jclass cls = GetClass(env, JAR_PATH);
-  jmethodID method = env->GetStaticMethodID(cls, "setLandscape", "(Z)V");
+  jmethodID method = env->GetStaticMethodID(cls, "setLandscape", "(Landroid/app/Activity;)V");
   env->CallStaticVoidMethod(cls, method, dmGraphics::GetNativeAndroidActivity());
   env->DeleteLocalRef(cls);
 }
