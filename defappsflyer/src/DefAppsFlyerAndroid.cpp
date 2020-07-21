@@ -123,10 +123,8 @@ const char* DefAppsFlyer_getConversionResult(){
   jmethodID method = env->GetStaticMethodID(cls, "getConversionResult", "()Ljava/lang/String;");
   jstring return_value = (jstring)env->CallStaticObjectMethod(cls, method);
   const char *result_string = env->GetStringUTFChars(return_value, 0);
-  //lua_pushstring(L, env->GetStringUTFChars(return_value, 0));
   env->DeleteLocalRef(return_value);
   return result_string;
-  //return "Hello from DefAppsFlyerAndroid.cpp";
 }
 
 void DefAppsFlyer_setPortrait(){

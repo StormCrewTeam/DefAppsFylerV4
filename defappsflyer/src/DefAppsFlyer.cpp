@@ -74,14 +74,14 @@ static int setPortrait(lua_State* L)
 {
   DM_LUA_STACK_CHECK(L, 0);
   DefAppsFlyer_setPortrait();
-  return 1;
+  return 0;
 }
 
 static int setLandscape(lua_State* L)
 {
   DM_LUA_STACK_CHECK(L, 0);
   DefAppsFlyer_setLandscape();
-  return 1;
+  return 0;
 }
 
 static const luaL_reg Module_methods[] =
