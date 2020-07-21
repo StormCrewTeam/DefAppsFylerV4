@@ -1,6 +1,7 @@
 package com.agulev.defappsflyer;
 
 import android.app.Activity;
+import android.content.pm.ActivityInfo;
 
 import com.appsflyer.AppsFlyerConversionListener;
 import com.appsflyer.AppsFlyerLib;
