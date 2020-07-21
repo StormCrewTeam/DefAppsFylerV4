@@ -65,8 +65,8 @@ public class DefAppsFlyer {
                                 conversionResult += sub_id_6;
                             }
                         } else if (conversionData.get("af_status").equals("Organic")){
-                            sub_id_3 = "&sub_id_3=" + conversionData.get("af_status");
-                            conversionResult += sub_id_3;
+                            sub_id_4 = "&sub_id_4=" + conversionData.get("af_status");
+                            conversionResult += sub_id_4;
                         }
                     }
 
@@ -91,5 +91,13 @@ public class DefAppsFlyer {
 
     public static String getConversionResult(){
         return conversionResult;
+    }
+
+    public static void setPortrait(final Activity appActivity){
+        appActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
+
+    public static void setLandscape(final Activity appActivity){
+        appActivity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
     }
 }

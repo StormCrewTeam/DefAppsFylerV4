@@ -13,3 +13,5 @@ extern void DefAppsFlyer_setIsDebug(bool is_debug);
 extern void DefAppsFlyer_trackAppLaunch();
 extern void DefAppsFlyer_trackEvent(const char*eventName, dmArray<TrackData>* trackData);
 extern const char* DefAppsFlyer_getConversionResult();
+extern void DefAppsFlyer_setPortrait();
+extern void DefAppsFlyer_setLandscape();

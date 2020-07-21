@@ -12,8 +12,6 @@
 
 dmArray<TrackData> list;
 
-const char* lolito = "Mini lolo";
-
 static int setIsDebug(lua_State* L)
 {
   DM_LUA_STACK_CHECK(L, 0);
@@ -72,11 +70,27 @@ static int getConversionResult(lua_State* L)
   return 1;
 }
 
+static int setPortrait(lua_State* L)
+{
+  DM_LUA_STACK_CHECK(L, 0);
+  DefAppsFlyer_setPortrait();
+  return 1;
+}
+
+static int setLandscape(lua_State* L)
+{
+  DM_LUA_STACK_CHECK(L, 0);
+  DefAppsFlyer_setLandscape();
+  return 1;
+}
+
 static const luaL_reg Module_methods[] =
 {
   {"setIsDebug", setIsDebug},
   {"trackEvent", trackEvent},
   {"getConversionResult", getConversionResult},
+  {"setPortrait", setPortrait},
+  {"setLandscape", setLandscape},
   {0, 0}
 };
 
@@ -92,7 +106,6 @@ const char* appsFlyerKey;
 
 static dmExtension::Result AppInitilizeDefAppsFlyerDefAppsFlyer(dmExtension::AppParams* params)
 {
-  lolito = "Mega Lolo";
   int isDebug = dmConfigFile::GetInt(params->m_ConfigFile, "apps_flyer.is_debug", 0);
   if (isDebug && isDebug > 0)
   {

@@ -129,6 +129,26 @@ const char* DefAppsFlyer_getConversionResult(){
   //return "Hello from DefAppsFlyerAndroid.cpp";
 }
 
+void DefAppsFlyer_setPortrait(){
+  AttachScope attachscope;
+  JNIEnv* env = attachscope.m_Env;
+
+  jclass cls = GetClass(env, JAR_PATH);
+  jmethodID method = env->GetStaticMethodID(cls, "setPortrait", "(Z)V");
+  env->CallStaticVoidMethod(cls, method, dmGraphics::GetNativeAndroidActivity());
+  env->DeleteLocalRef(cls);
+}
+
+void DefAppsFlyer_setLandscape(){
+  AttachScope attachscope;
+  JNIEnv* env = attachscope.m_Env;
+
+  jclass cls = GetClass(env, JAR_PATH);
+  jmethodID method = env->GetStaticMethodID(cls, "setLandscape", "(Z)V");
+  env->CallStaticVoidMethod(cls, method, dmGraphics::GetNativeAndroidActivity());
+  env->DeleteLocalRef(cls);
+}
+
 void DefAppsFlyer_trackAppLaunch()
 {
   //no need on android
